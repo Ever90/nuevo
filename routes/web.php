@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserController@index');//lista las rutas
+Route::post('users', 'UserController@store')->name('users.store');//cuando se presiona guardar se va a la BD
+Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');//elimina  al usuario
